@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/11/25 15:32:38 by toto             ###   ########.fr       */
+/*   Updated: 2024/11/25 15:43:56 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,4 @@ int	handling_error(char **argv)
 		i++;
 	}
 	return (1);
-}
-
-int main(int argc, char **argv)
-{
-	handling_error(argv);
 }
