@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/11/26 13:56:46 by toto             ###   ########.fr       */
+/*   Updated: 2024/11/26 16:22:14 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,36 @@ void	build_stack(t_stack **stack, char **argv)
 	}
 }
 
+int	ft_is_duplicates(t_stack *pile)
+{
+	t_stack	*current;
+	t_stack	*run;
+
+	current = pile;
+	while (current != NULL)
+	{
+		run = current->next;
+		while (run != NULL)
+		{
+			if (current->nb == run->nb)
+			{
+				write_error(0);
+				return (0);
+			}
+			run = run->next;
+		}
+		current = current->next;
+	}
+	return (1);
+}
+
 // int main(int argc, char **argv)
 // {
 // 	t_stack *pile_a;
 
 // 	pile_a = NULL;
 // 	build_stack(&pile_a, argv);
+// 	ft_is_duplicates(pile_a);
 // 	while (pile_a != NULL)
 // 	{
 // 		printf("%d\n", pile_a->nb);
