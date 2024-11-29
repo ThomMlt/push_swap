@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+         #
+#    By: toto <toto@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/24 20:55:23 by tmillot           #+#    #+#              #
-#    Updated: 2024/10/27 15:29:48 by tmillot          ###   ########.fr        #
+#    Updated: 2024/11/29 15:28:37 by toto             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,11 @@ SRCS = ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_print_pointer.c \
+		ft_printf.c \
+		ft_putnbr_count.c \
+		ft_putnbr_hexa.c \
+		ft_putstr_count.c \
 
 BONUS = ft_lstnew_bonus.c \
 			ft_lstadd_front_bonus.c \
