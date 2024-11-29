@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/11/26 13:54:46 by toto             ###   ########.fr       */
+/*   Updated: 2024/11/29 12:22:09 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,18 @@
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
 
-typedef struct s_stack
+typedef struct s_lst
 {
 	int				nb;
-	struct s_stack	*next;
+	struct s_lst	*next;
+}			t_lst;
+
+typedef struct s_stack
+{
+	t_lst	*p_a;
+	t_lst	*p_b;
+	int		size_a;
+	int		size_b;
 }			t_stack;
 
 /*input error hangling*/
@@ -32,8 +40,10 @@ int		ft_is_int(long nb);
 int		handling_error(char **argv);
 
 /**/
-t_stack	*ft_newlst_int(int nb);
-void	ft_addlst_stack(t_stack **lst, t_stack *nb);
-void	build_stack(t_stack **stack, char **argv);
+t_lst	*ft_newlst_int(int nb);
+void	ft_addlst_stack(t_lst **lst, t_lst *nb);
+void	build_stack(t_lst **stack, char **argv);
+int		ft_is_duplicates(t_lst *pile);
+int		ft_lst_lenght(t_lst *pile);
 
 #endif

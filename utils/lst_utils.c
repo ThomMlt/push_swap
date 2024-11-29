@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   work_lst.c                                         :+:      :+:    :+:   */
+/*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/11/26 16:22:14 by toto             ###   ########.fr       */
+/*   Updated: 2024/11/29 12:21:18 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../push_swap/push_swap.h"
 
-t_stack	*ft_newlst_int(int nb)
+t_lst	*ft_newlst_int(int nb)
 {
-	t_stack	*dest;
+	t_lst	*dest;
 
-	dest = malloc(sizeof(t_stack));
+	dest = malloc(sizeof(t_lst));
 	if (!dest)
 		return (NULL);
 	dest->nb = nb;
@@ -24,9 +24,9 @@ t_stack	*ft_newlst_int(int nb)
 	return (dest);
 }
 
-void	ft_addlst_stack(t_stack **lst, t_stack *nb)
+void	ft_addlst_stack(t_lst **lst, t_lst *nb)
 {
-	t_stack	*last;
+	t_lst	*last;
 
 	if (lst == NULL || nb == NULL)
 		return ;
@@ -41,7 +41,7 @@ void	ft_addlst_stack(t_stack **lst, t_stack *nb)
 	last->next = nb;
 }
 
-void	build_stack(t_stack **stack, char **argv)
+void	build_stack(t_lst **stack, char **argv)
 {
 	int		i;
 	int		j;
@@ -61,27 +61,17 @@ void	build_stack(t_stack **stack, char **argv)
 	}
 }
 
-int	ft_is_duplicates(t_stack *pile)
+int	ft_lst_lenght(t_lst *pile)
 {
-	t_stack	*current;
-	t_stack	*run;
+	int	i;
 
-	current = pile;
-	while (current != NULL)
+	i = 0;
+	while (pile != NULL)
 	{
-		run = current->next;
-		while (run != NULL)
-		{
-			if (current->nb == run->nb)
-			{
-				write_error(0);
-				return (0);
-			}
-			run = run->next;
-		}
-		current = current->next;
+		i++;
+		pile = pile->next;
 	}
-	return (1);
+	return (i);
 }
 
 // int main(int argc, char **argv)

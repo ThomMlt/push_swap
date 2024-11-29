@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap.c                                             :+:      :+:    :+:   */
+/*   ft_check_duplicate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 17:39:27 by toto              #+#    #+#             */
-/*   Updated: 2024/11/29 12:36:44 by toto             ###   ########.fr       */
+/*   Created: 2024/11/29 12:16:51 by toto              #+#    #+#             */
+/*   Updated: 2024/11/29 12:18:52 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap/push_swap.h"
 
-void	swap_a(t_stack *pile_a)
+int	ft_is_duplicates(t_lst *pile)
 {
-	
+	t_lst	*current;
+	t_lst	*run;
+
+	current = pile;
+	while (current != NULL)
+	{
+		run = current->next;
+		while (run != NULL)
+		{
+			if (current->nb == run->nb)
+			{
+				write_error(0);
+				return (0);
+			}
+			run = run->next;
+		}
+		current = current->next;
+	}
+	return (1);
 }
