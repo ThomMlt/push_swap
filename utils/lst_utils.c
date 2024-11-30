@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/11/29 12:21:18 by toto             ###   ########.fr       */
+/*   Updated: 2024/11/30 14:03:19 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_lst	*ft_newlst_int(int nb)
 	return (dest);
 }
 
-void	ft_addlst_stack(t_lst **lst, t_lst *nb)
+void	ft_addlst_back(t_lst **lst, t_lst *nb)
 {
 	t_lst	*last;
 
@@ -41,6 +41,12 @@ void	ft_addlst_stack(t_lst **lst, t_lst *nb)
 	last->next = nb;
 }
 
+void	ft_addlst_front(t_lst **lst, t_lst *nb)
+{
+	nb->next = *lst;
+	*lst = nb;
+}
+
 void	build_stack(t_lst **stack, char **argv)
 {
 	int		i;
@@ -54,7 +60,7 @@ void	build_stack(t_lst **stack, char **argv)
 		j = 0;
 		while (str[j] != NULL)
 		{
-			ft_addlst_stack(stack, ft_newlst_int(ft_atoi(str[j])));
+			ft_addlst_back(stack, ft_newlst_int(ft_atoi(str[j])));
 			j++;
 		}
 		i++;

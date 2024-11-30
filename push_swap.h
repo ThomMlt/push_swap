@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/11/29 18:17:58 by toto             ###   ########.fr       */
+/*   Updated: 2024/11/30 15:36:12 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ int		handling_error(char **argv);
 
 /**/
 t_lst	*ft_newlst_int(int nb);
-void	ft_addlst_stack(t_lst **lst, t_lst *nb);
+void	ft_addlst_back(t_lst **lst, t_lst *nb);
+void	ft_addlst_front(t_lst **lst, t_lst *nb);
 void	build_stack(t_lst **stack, char **argv);
 int		ft_is_duplicates(t_lst *pile);
 int		ft_lst_lenght(t_lst *pile);
@@ -50,5 +51,7 @@ int		ft_lst_lenght(t_lst *pile);
 void	swap_a(t_stack *pile);
 void	swap_b(t_stack *pile);
 void	swap_a_and_b(t_stack *pile);
+void	push_a(t_stack *pile);
+void	push_b(t_stack *pile);
 
 #endif
