@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/02 10:32:14 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/02 17:36:56 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ void	push_b(t_stack *pile);
 void	rotate_a(t_stack *pile);
 void	rotate_b(t_stack *pile);
 void	rotate_a_b(t_stack *pile);
+void	reverse_a(t_stack *pile);
+void	reverse_b(t_stack *pile);
+void	reverse_a_b(t_stack *pile);
 
 #endif
