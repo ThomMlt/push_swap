@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/11/30 15:36:12 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/02 10:32:14 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ void	swap_b(t_stack *pile);
 void	swap_a_and_b(t_stack *pile);
 void	push_a(t_stack *pile);
 void	push_b(t_stack *pile);
+void	rotate_a(t_stack *pile);
+void	rotate_b(t_stack *pile);
+void	rotate_a_b(t_stack *pile);
 
 #endif

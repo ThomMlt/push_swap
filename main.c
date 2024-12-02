@@ -25,12 +25,7 @@ int main(int argc, char **argv)
 	piles->size_b = 0;
 	// build_stack(&piles->p_b, argv);
 	build_stack(&piles->p_a, argv);
-	t_lst *new;
-	new = malloc(sizeof(t_lst));
-	new->nb = 8;
-	new->next = NULL;
-	ft_addlst_front(&piles->p_b, new);
-	push_a(piles);
+	rotate_a(piles);
 	t_lst	*pile_b = piles->p_b;
 	t_lst	*pile_a = piles->p_a;
 	ft_printf("A	B\n");
@@ -38,8 +33,8 @@ int main(int argc, char **argv)
 		return (0);
 	while (pile_a != NULL)
 	{
-		ft_printf("%d	%d\n", pile_a->nb, pile_b->nb);
-		pile_b = pile_b->next;
+		ft_printf("%d\n", pile_a->nb);
+		// pile_b = pile_b->next;
 		pile_a = pile_a->next;
 	}
 }
