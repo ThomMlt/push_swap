@@ -6,17 +6,11 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/11/25 15:43:56 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/05 16:46:33 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../push_swap/push_swap.h"
-
-void	write_error(int c)
-{
-	if (c == 0)
-		ft_putstr_fd("error\n", 2);
-}
 
 int	only_digit(char *str)
 {
@@ -28,16 +22,13 @@ int	only_digit(char *str)
 	while (str[i] != '\0')
 	{
 		if (ft_isdigit(str[i]) == 0)
-		{
-			write_error(0);
-			return (0);
-		}
+			return (FAILURE);
 		i++;
 	}
-	return (1);
+	return (SUCCESS);
 }
 
-long	ft_atoi_pushswap(char *str)
+long	ft_is_atoi(char *str)
 {
 	int		sign;
 	long	result;
@@ -57,15 +48,11 @@ long	ft_atoi_pushswap(char *str)
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (sign * result);
-}
-
-int	ft_is_int(long nb)
-{
-	if (nb >= INT_MIN && nb <= INT_MAX)
-		return (1);
+	result *= sign;
+	if (result >= INT_MIN && result <= INT_MAX)
+		return (SUCCESS);
 	else
-		return (0);
+		return (FAILURE);
 }
 
 int	handling_error(char **argv)
@@ -81,13 +68,45 @@ int	handling_error(char **argv)
 		j = 0;
 		while (str[j] != NULL)
 		{
-			if (only_digit(str[j]) == 0)
-				return (0);
-			if (ft_is_int(ft_atoi_pushswap(str[j])) == 0)
-				return (write_error(0), 0);
+			if (only_digit(str[j]) == FAILURE)
+				return (FAILURE);
+			if (ft_is_atoi(str[j]) == FAILURE)
+				return (FAILURE);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (SUCCESS);
+}
+
+int	ft_is_duplicates(t_lst *pile_a)
+{
+	t_lst	*current;
+	t_lst	*run;
+
+	current = pile_a;
+	while (current != NULL)
+	{
+		run = current->next;
+		while (run != NULL)
+		{
+			if (current->nb == run->nb)
+				return (FAILURE);
+			run = run->next;
+		}
+		current = current->next;
+	}
+	return (SUCCESS);
+}
+
+int	ft_parse_push_swap(t_stack *piles, char **argv)
+{
+	if (handling_error(argv) == FAILURE
+		|| ft_is_duplicates(piles->p_a) == FAILURE
+		|| piles->p_a == NULL)
+	{
+		ft_putstr_fd("error\n", 2);
+		return (FAILURE);
+	}
+	return (SUCCESS);
 }

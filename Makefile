@@ -6,7 +6,7 @@
 #    By: toto <toto@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/29 14:12:47 by toto              #+#    #+#              #
-#    Updated: 2024/11/29 15:20:36 by toto             ###   ########.fr        #
+#    Updated: 2024/12/05 16:55:24 by toto             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,9 +54,9 @@ NAME = push_swap
 
 CC = cc
 
-# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-SRCS = $(wildcard *.c) $(wildcard rules/*.c) $(wildcard error_handling/*.c) $(wildcard utils/*.c)
+SRCS = $(wildcard *.c) $(wildcard rules/*.c) $(wildcard error_handling/*.c) $(wildcard utils/*.c) $(wildcard algorithm/*.c) $(wildcard init/*.c)
 
 OBJS = ${SRCS:.c=.o}
 

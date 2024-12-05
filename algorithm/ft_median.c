@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_duplicate.c                               :+:      :+:    :+:   */
+/*   ft_median.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/29 12:16:51 by toto              #+#    #+#             */
-/*   Updated: 2024/11/29 12:18:52 by toto             ###   ########.fr       */
+/*   Created: 2024/12/05 11:04:16 by toto              #+#    #+#             */
+/*   Updated: 2024/12/05 11:25:24 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap/push_swap.h"
+#include "../push_swap.h"
 
-int	ft_is_duplicates(t_lst *pile)
+int	index_median(t_stack *pile)
 {
-	t_lst	*current;
-	t_lst	*run;
-
-	current = pile;
-	while (current != NULL)
-	{
-		run = current->next;
-		while (run != NULL)
-		{
-			if (current->nb == run->nb)
-			{
-				write_error(0);
-				return (0);
-			}
-			run = run->next;
-		}
-		current = current->next;
-	}
-	return (1);
+	if (pile->size_a % 2 == 0)
+		return (pile->size_a / 2);
+	else
+		return ((pile->size_a + 1) / 2);
 }

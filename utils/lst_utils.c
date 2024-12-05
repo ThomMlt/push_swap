@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/11/30 14:03:19 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/05 16:16:17 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,22 @@ void	build_stack(t_lst **stack, char **argv)
 	char	**str;
 
 	i = 1;
-	while (argv[i] != NULL)
+	if (handling_error(argv) == SUCCESS)
 	{
-		str = ft_split(argv[i], ' ');
-		j = 0;
-		while (str[j] != NULL)
+		while (argv[i] != NULL)
 		{
-			ft_addlst_back(stack, ft_newlst_int(ft_atoi(str[j])));
-			j++;
+			str = ft_split(argv[i], ' ');
+			j = 0;
+			while (str[j] != NULL)
+			{
+				ft_addlst_back(stack, ft_newlst_int(ft_atoi(str[j])));
+				j++;
+			}
+			i++;
 		}
-		i++;
 	}
+	else
+		*stack = NULL;
 }
 
 int	ft_lst_lenght(t_lst *pile)
