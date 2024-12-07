@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/05 16:36:24 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/07 16:32:29 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,14 @@ void	ft_addlst_front(t_lst **lst, t_lst *nb);
 void	build_stack(t_lst **stack, char **argv);
 int		ft_lst_lenght(t_lst *pile);
 
+/*utils algo*/
+int		find_max(t_lst *pile);
+int		find_min(t_lst *pile);
+int		find_max_index(t_lst *pile);
+int		find_min_index(t_lst *pile);
+int		find_closet_upper_index(t_lst *pile, int nb);
+int		find_closet_lower_index(t_lst *pile, int nb);
+
 /*rules*/
 void	swap_a(t_stack *pile);
 void	swap_b(t_stack *pile);
@@ -66,6 +74,7 @@ void	reverse_b(t_stack *pile);
 void	reverse_a_b(t_stack *pile);
 
 /*Algo*/
-int		index_median(t_stack *pile);
+void	ft_sort_under_three_pa(t_stack *piles);
+
 
 #endif

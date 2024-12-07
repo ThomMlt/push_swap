@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 	piles = ft_init(argv);
 	if (ft_parse_push_swap(piles, argv) == FAILURE)
 		return (FAILURE);
+	ft_sort_under_three_pa(piles);
 	while (piles->p_a != NULL)
 	{
 		ft_printf("%d\n", piles->p_a->nb);
