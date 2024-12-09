@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/07 16:32:29 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/09 16:44:00 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		find_min(t_lst *pile);
 int		find_max_index(t_lst *pile);
 int		find_min_index(t_lst *pile);
 int		find_closet_upper_index(t_lst *pile, int nb);
-int		find_closet_lower_index(t_lst *pile, int nb);
+int		find_closest_lower_index(t_lst *pile, int nb);
 
 /*rules*/
 void	swap_a(t_stack *pile);

@@ -6,7 +6,7 @@
 /*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 13:35:06 by toto              #+#    #+#             */
-/*   Updated: 2024/12/07 15:10:36 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/09 16:44:00 by toto             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	find_closet_upper_index(t_lst *pile, int nb)
 	current = pile;
 	min_diff = INT_MAX;
 	current_index = 0;
+	index = -1;
 	while (current != NULL)
 	{
 		if (current->nb > nb)
@@ -43,7 +44,7 @@ int	find_closet_upper_index(t_lst *pile, int nb)
 	return (index);
 }
 
-int	find_closet_lower_index(t_lst *pile, int nb)
+int	find_closest_lower_index(t_lst *pile, int nb)
 {
 	int		diff;
 	int		min_diff;
@@ -54,6 +55,7 @@ int	find_closet_lower_index(t_lst *pile, int nb)
 	current = pile;
 	min_diff = INT_MAX;
 	current_index = 0;
+	index = -1;
 	while (current != NULL)
 	{
 		if (current->nb < nb)
