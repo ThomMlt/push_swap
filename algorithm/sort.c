@@ -6,7 +6,7 @@
 /*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:02:11 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/10 14:15:17 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/11 00:03:40 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,47 @@ void	ft_sort_under_three_pa(t_stack *piles)
 			swap_a(piles);
 }
 
+void	put_max_b_on_top(t_stack *piles)
+{
+	int	max_index;
+
+	max_index = find_max_index(piles->p_b);
+	if (max_index * 2 < piles->size_b)
+	{
+		while (max_index > 0)
+		{
+			rotate_b(piles);
+			max_index--;
+		}
+	}
+	else
+	{
+		while (max_index < piles->size_b)
+		{
+			reverse_b(piles);
+			max_index++;
+		}
+	}
+}
+
 void	ft_sort(t_stack *piles)
 {
     if (check_piles_sort(piles) == FAILURE)
     {
-        if (piles->size_a <= 3)
+	    if (piles->size_a > 3)
+		    push_b(piles);
+	    if (piles->size_a > 3)
+		    push_b(piles);
+        while (piles->size_a > 3)
+			find_cheapest_move(piles);
+		if (piles->size_a <= 3)
+		{
+			if (piles->p_b != NULL)
+			{
+				put_max_b_on_top(piles);
+				
+			}
             ft_sort_under_three_pa(piles);
-	    if (piles->size_a > 3)
-		    push_b(piles);
-	    if (piles->size_a > 3)
-		    push_b(piles);
+		}
     }
 }

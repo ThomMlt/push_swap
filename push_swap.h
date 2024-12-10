@@ -6,7 +6,7 @@
 /*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/10 17:42:33 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/11 00:03:48 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ int		get_index(t_lst *pile, int nb);
 void	find_cheapest_move(t_stack *piles);
 void	ft_sort(t_stack *piles);
 int		check_piles_sort(t_stack *piles);
+void	do_move(t_stack *piles, int index, int nb);
 
 #endif
