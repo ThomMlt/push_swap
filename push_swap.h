@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/09 16:44:00 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/10 17:42:33 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,18 @@ void	reverse_a_b(t_stack *pile);
 /*Algo*/
 void	ft_sort_under_three_pa(t_stack *piles);
 
+/*Cette fonction pernet de trouver le cout de chaque nombre dans pile A
+i _nb est l'indice du nombre dans la pile A
+i_closest_b est l'entier inferieur le plus proche dans B
+A defaut (si -1) c'est qu'il devient le nouveau minimum de B donc on 
+souhaite le mettre dessus le max de B
+
+On part du principe que si l'indice d'un des deux est inferieur a l'autre
+vaut mieux faire des doubles rotate ou reverse*/
+int		find_cost(t_stack *piles, int nb);
+int		get_index(t_lst *pile, int nb);
+void	find_cheapest_move(t_stack *piles);
+void	ft_sort(t_stack *piles);
+int		check_piles_sort(t_stack *piles);
 
 #endif
