@@ -20,15 +20,22 @@ int main(int argc, char **argv)
 	piles = ft_init(argv);
 	if (ft_parse_push_swap(piles, argv) == FAILURE)
 		return (FAILURE);
-	ft_sort_under_three_pa(piles);
+	else
+		ft_sort(piles);
 	while (piles->p_a != NULL)
 	{
 		ft_printf("%d\n", piles->p_a->nb);
 		piles->p_a = piles->p_a->next;
 	}
-	// ft_printf("size a :%d", piles->size_a);
 }
 
+	// ft_sort_under_three_pa(piles);
+	// while (piles->p_a != NULL)
+	// {
+	// 	ft_printf("%d\n", piles->p_a->nb);
+	// 	piles->p_a = piles->p_a->next;
+	// }
+	// ft_printf("size a :%d", piles->size_a);
 // int main(int argc, char **argv)
 // {
 // 	(void)argc;

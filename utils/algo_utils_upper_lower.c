@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils_upper_lower.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 13:35:06 by toto              #+#    #+#             */
-/*   Updated: 2024/12/09 16:44:00 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/12 10:23:04 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // ft_ next upper index 
 // ft_ next lower index
 
-int	find_closet_upper_index(t_lst *pile, int nb)
+int	find_closest_upper_index(t_lst *pile, int nb)
 {
 	int		diff;
 	int		min_diff;

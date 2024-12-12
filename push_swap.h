@@ -6,7 +6,7 @@
 /*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/11 00:03:48 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/12 15:18:34 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,13 @@ void	build_stack(t_lst **stack, char **argv);
 int		ft_lst_lenght(t_lst *pile);
 
 /*utils algo*/
+int	ft_index_to_value(t_lst *lst, int index);
+void	print_piles(t_stack *piles);
 int		find_max(t_lst *pile);
 int		find_min(t_lst *pile);
 int		find_max_index(t_lst *pile);
 int		find_min_index(t_lst *pile);
-int		find_closet_upper_index(t_lst *pile, int nb);
+int		find_closest_upper_index(t_lst *pile, int nb);
 int		find_closest_lower_index(t_lst *pile, int nb);
 
 /*rules*/

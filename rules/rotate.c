@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:25:53 by toto              #+#    #+#             */
-/*   Updated: 2024/12/02 10:29:22 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/12 14:25:26 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	rotate_b(t_stack *pile)
 	pile->p_b = first->next;
 	last->next = first;
 	first->next = NULL;
-	ft_printf("pb\n");
+	ft_printf("rb\n");
 }
 
 void	rotate_a_b(t_stack *pile)

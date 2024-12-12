@@ -6,7 +6,7 @@
 /*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 09:55:57 by toto              #+#    #+#             */
-/*   Updated: 2024/12/11 00:03:45 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/12 15:11:47 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ int	find_cost(t_stack *piles, int nb)
 	else if (i_closest_b * 2 >= piles->size_b && (piles->size_a - i_nb) <= (piles->size_b - i_closest_b))
 		cost = piles->size_b - i_closest_b;
 	else if (i_nb * 2 < piles->size_a && i_closest_b * 2 >= piles->size_b)
-		cost = i_nb + (piles->size_b + i_closest_b);
+		cost = i_nb + (piles->size_b - i_closest_b);
 	else if (i_nb * 2 >= piles->size_a && i_closest_b * 2 < piles->size_b)
 		cost = i_closest_b + (piles->size_a - i_nb);
+	printf("le cout est de : %d pour lui %d pour le mettre au dessus de : %d -> %d\n", cost, nb, i_closest_b, ft_index_to_value(piles->p_b, i_closest_b));
 	return (cost);
 }
 
@@ -59,19 +60,21 @@ void	find_cheapest_move(t_stack *piles)
 	int		min_cost;
 	t_lst	*current_pa;
 
-	min_cost = (piles, piles->p_a->nb);
+	min_cost = find_cost(piles, piles->p_a->nb);
 	index_nb = 0;
+	nb = piles->p_a->nb;
 	current_pa = piles->p_a->next;
 	while (current_pa != NULL)
 	{
 		cost = find_cost(piles, current_pa->nb);
 		if (cost < min_cost)
 		{
-			index_nb = get_index(current_pa, current_pa->nb);
+			index_nb = get_index(piles->p_a, current_pa->nb);
 			nb = current_pa->nb;
 			min_cost = cost;
 		}
 		current_pa = current_pa->next;
 	}
+	printf("start do move : %d -> %d\n", index_nb, nb);
 	do_move(piles, index_nb, nb);
 }
