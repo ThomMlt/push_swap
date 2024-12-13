@@ -6,7 +6,7 @@
 /*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:02:11 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/12 17:13:52 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/13 14:35:20 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,16 +82,20 @@ t_lst	*ft_lstlast_ps(t_lst *lst)
 void	push_back_a(t_stack *piles)
 {
 	t_lst	*last;
-	int		next_upper;
+	t_lst	*first_b;
+	// int		next_upper;
 	
 	last = ft_lstlast_ps(piles->p_a);
-	next_upper = find_closest_upper_index(piles->p_a, piles->p_b->nb);
-	while (next_upper > 0)
-	{
-		reverse_a(piles);
-		next_upper--;
-	}
-	while (piles->p_b->nb < last->nb && last->nb != find_max(piles->p_a))
+	first_b = piles->p_b;
+	// next_upper = find_closest_upper_index(piles->p_a, first_b->nb);
+	// if (next_upper == -1)
+	// 	next_upper = find_min_index(piles->p_a);
+	// while (next_upper > 0)
+	// {
+	// 	reverse_a(piles);
+	// 	next_upper--;
+	// }
+	while (first_b->nb < last->nb && last->nb != find_max(piles->p_a))
 		reverse_a(piles);
 	push_a(piles);
 }
@@ -113,11 +117,16 @@ void	ft_sort(t_stack *piles)
 		if (piles->size_a <= 3)
 		{
 			ft_sort_under_three_pa(piles);
+			print_piles(piles);
 			if (piles->p_b != NULL)
 			{
 				put_max_b_on_top(piles);
+				print_piles(piles);
 				while (piles->p_b != NULL)
+				{
 					push_back_a(piles);
+					print_piles(piles);
+				}
 			}
 		}
     }
