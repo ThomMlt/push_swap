@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/12 15:18:34 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/16 16:03:24 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void	ft_addlst_back(t_lst **lst, t_lst *nb);
 void	ft_addlst_front(t_lst **lst, t_lst *nb);
 void	build_stack(t_lst **stack, char **argv);
 int		ft_lst_lenght(t_lst *pile);
+void	free_lst(t_lst *pile);
+void	free_tab_char(char **tab);
 
 /*utils algo*/
 int	ft_index_to_value(t_lst *lst, int index);

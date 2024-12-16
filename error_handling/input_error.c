@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/12/05 16:46:33 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/16 16:27:16 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,15 +68,20 @@ int	handling_error(char **argv)
 		j = 0;
 		while (str[j] != NULL)
 		{
-			if (only_digit(str[j]) == FAILURE)
-				return (FAILURE);
-			if (ft_is_atoi(str[j]) == FAILURE)
-				return (FAILURE);
+			if (only_digit(str[j]) == FAILURE || ft_is_atoi(str[j]) == FAILURE)
+			{
+				while (j >= 0)
+				{
+					free(str[j]);
+					j--;
+				}
+				return (free(str), FAILURE);
+			}
 			j++;
 		}
 		i++;
 	}
-	return (SUCCESS);
+	return (free_tab_char(str), SUCCESS);
 }
 
 int	ft_is_duplicates(t_lst *pile_a)
@@ -91,7 +96,7 @@ int	ft_is_duplicates(t_lst *pile_a)
 		while (run != NULL)
 		{
 			if (current->nb == run->nb)
-				return (FAILURE);
+				return (free_lst(pile_a) , FAILURE);
 			run = run->next;
 		}
 		current = current->next;
