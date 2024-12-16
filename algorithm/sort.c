@@ -6,7 +6,7 @@
 /*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:02:11 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/13 14:35:20 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/16 12:51:20 by thomas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,24 +79,39 @@ t_lst	*ft_lstlast_ps(t_lst *lst)
 	return (lst);
 }
 
+void	put_min_a_on_top(t_stack *piles)
+{
+	int	index_min;
+
+	index_min = find_min_index(piles->p_a);
+	if (index_min * 2 < piles->size_a)
+		while (index_min-- > 0)
+			rotate_a(piles);
+	if (index_min * 2 >= piles->size_a)
+	{
+		while (index_min < piles->size_a)
+		{
+			reverse_a(piles);
+			index_min++;
+		}		
+	}
+}
+
 void	push_back_a(t_stack *piles)
 {
-	t_lst	*last;
 	t_lst	*first_b;
-	// int		next_upper;
+	int		next_upper;
 	
-	last = ft_lstlast_ps(piles->p_a);
 	first_b = piles->p_b;
-	// next_upper = find_closest_upper_index(piles->p_a, first_b->nb);
-	// if (next_upper == -1)
-	// 	next_upper = find_min_index(piles->p_a);
-	// while (next_upper > 0)
-	// {
-	// 	reverse_a(piles);
-	// 	next_upper--;
-	// }
-	while (first_b->nb < last->nb && last->nb != find_max(piles->p_a))
-		reverse_a(piles);
+	next_upper = find_closest_upper_index(piles->p_a, first_b->nb);
+	if (next_upper == -1)
+		next_upper = find_min_index(piles->p_a);
+	if (next_upper * 2 < piles->size_a)
+		while (next_upper-- > 0)
+			rotate_a(piles);
+	else
+		while (next_upper++ < piles->size_a)
+			reverse_a(piles);
 	push_a(piles);
 }
 
@@ -109,24 +124,16 @@ void	ft_sort(t_stack *piles)
 	    if (piles->size_a > 3)
 		    push_b(piles);
         while (piles->size_a > 3)
-		{
-			printf("\ntaille de a :%d\n", piles->size_a);
 			find_cheapest_move(piles);
-		}
-		print_piles(piles);
 		if (piles->size_a <= 3)
 		{
 			ft_sort_under_three_pa(piles);
-			print_piles(piles);
 			if (piles->p_b != NULL)
 			{
 				put_max_b_on_top(piles);
-				print_piles(piles);
 				while (piles->p_b != NULL)
-				{
 					push_back_a(piles);
-					print_piles(piles);
-				}
+				put_min_a_on_top(piles);
 			}
 		}
     }
