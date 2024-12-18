@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 14:07:26 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 17:00:04 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	only_digit(char *str)
 		i++;
 	while (str[i] != '\0')
 	{
-		if (ft_isdigit(str[i]) == 0)
+		if (ft_isdigit(str[i]) == 0 || ft_strlen(str) > 11)
 			return (FAILURE);
 		i++;
 	}
@@ -71,6 +71,7 @@ int	handling_error(char **argv)
 			if (only_digit(str[j]) == FAILURE || ft_is_atoi(str[j]) == FAILURE)
 			{
 				free_tab_char(str);
+				ft_putstr_fd("error\n", 2);
 				return (FAILURE);
 			}
 			j++;
