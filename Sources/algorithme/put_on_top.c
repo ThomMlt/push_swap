@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 12:59:54 by tmillot           #+#    #+#             */
-/*   Updated: 2024/12/18 13:00:46 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:07:14 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 void	put_min_a_on_top(t_stack *piles)
 {

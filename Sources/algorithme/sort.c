@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:02:11 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/18 13:01:57 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:29:51 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 int	check_piles_sort(t_stack *piles)
 {
@@ -19,7 +19,7 @@ int	check_piles_sort(t_stack *piles)
 	pile_a = piles->p_a;
 	if (pile_a == NULL || pile_a->next == NULL)
 		return (SUCCESS);
-	while (pile_a != NULL)
+	while (pile_a->next != NULL)
 	{
 		if (pile_a->nb > pile_a->next->nb)
 			return (FAILURE);

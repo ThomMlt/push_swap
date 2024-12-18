@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:17:13 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/18 13:05:01 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:07:11 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 static void	move_1(t_stack *piles, int index, int closest_index)
 {

@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init.c                                          :+:      :+:    :+:   */
+/*   print_piles.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/05 16:28:55 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 12:31:03 by tmillot          ###   ########.fr       */
+/*   Created: 2024/12/12 15:14:09 by thomas            #+#    #+#             */
+/*   Updated: 2024/12/18 14:08:23 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
-t_stack	*ft_init(char **argv)
+void	print_piles(t_stack *piles)
 {
-	t_stack	*piles;
+	t_lst	*l;
 
-	piles = malloc(sizeof(t_stack));
-	if (piles == NULL)
-		return (NULL);
-	piles->p_a = NULL;
-	piles->p_b = NULL;
-	build_stack(&piles->p_a, argv);
-	if (piles->p_a == NULL)
+	l = piles->p_a;
+	printf("\npile a : ");
+	while (l != NULL)
 	{
-		free(piles);
-		return (NULL);
+		printf("%d ", l->nb);
+		l = l->next;
 	}
-	piles->size_a = ft_lst_lenght(piles->p_a);
-	piles->size_b = 0;
-	return (piles);
+	printf("\npile b : ");
+	l = piles->p_b;
+	while (l != NULL)
+	{
+		printf("%d ", l->nb);
+		l = l->next;
+	}
+	printf("\n");
 }

@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 09:55:57 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 13:05:42 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:07:03 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 int	get_index(t_lst *pile, int nb)
 {

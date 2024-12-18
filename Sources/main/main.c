@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_index_to_value.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/12 14:51:40 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/18 13:02:37 by tmillot          ###   ########.fr       */
+/*   Created: 2024/11/23 16:48:54 by toto              #+#    #+#             */
+/*   Updated: 2024/12/18 14:07:42 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
-int	ft_index_to_value(t_lst *lst, int index)
+int	main(int argc, char **argv)
 {
-	int		i;
-	t_lst	*l;
+	t_stack	*piles;
 
-	i = 0;
-	l = lst;
-	while (i < index)
+	if (argc <= 1)
+		return (FAILURE);
+	piles = ft_init(argv);
+	if (piles == NULL)
+		return (FAILURE);
+	if (ft_parse_push_swap(piles, argv) == FAILURE)
+		return (free_t_stack(piles), FAILURE);
+	else
 	{
-		l = l->next;
-		i++;
+		ft_sort(piles);
+		free_t_stack(piles);
+		return (SUCCESS);
 	}
-	return (l->nb);
 }

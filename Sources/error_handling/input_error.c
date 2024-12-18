@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 12:55:39 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:07:26 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 int	only_digit(char *str)
 {

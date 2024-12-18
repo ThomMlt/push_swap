@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:33:15 by toto              #+#    #+#             */
-/*   Updated: 2024/12/16 16:48:49 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:07:51 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 void	reverse_a(t_stack *pile)
 {

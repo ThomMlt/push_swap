@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 13:02:48 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:08:19 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 t_lst	*ft_newlst_int(int nb)
 {

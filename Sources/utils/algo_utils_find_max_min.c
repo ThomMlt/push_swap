@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils_find_max_min.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 12:47:39 by toto              #+#    #+#             */
-/*   Updated: 2024/12/07 13:42:51 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/18 14:08:06 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 int	find_max(t_lst *pile)
 {

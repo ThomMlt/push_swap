@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 13:35:06 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 13:02:59 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:08:09 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
 int	find_closest_upper_index(t_lst *pile, int nb)
 {

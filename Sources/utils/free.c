@@ -1,32 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/23 16:48:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 12:56:06 by tmillot          ###   ########.fr       */
+/*   Created: 2024/12/16 15:32:10 by tmillot           #+#    #+#             */
+/*   Updated: 2024/12/18 14:08:12 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../Includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_lst(t_lst *pile)
 {
-	t_stack	*piles;
+	t_lst	*temp;
 
-	if (argc <= 1)
-		return (ft_putstr_fd("error\n", 2), FAILURE);
-	piles = ft_init(argv);
-	if (piles == NULL)
-		return (FAILURE);
-	if (ft_parse_push_swap(piles, argv) == FAILURE)
-		return (free_t_stack(piles), FAILURE);
-	else
+	while (pile)
 	{
-		ft_sort(piles);
-		free_t_stack(piles);
-		return (SUCCESS);
+		temp = pile;
+		pile = pile->next;
+		free(temp);
 	}
+}
+
+void	free_tab_char(char **tab)
+{
+	int	y;
+
+	y = 0;
+	if (tab == NULL)
+		return ;
+	while (tab[y] != NULL)
+	{
+		free(tab[y]);
+		y++;
+	}
+	free(tab);
+}
+
+void	free_t_stack(t_stack *piles)
+{
+	free_lst(piles->p_a);
+	free_lst(piles->p_b);
+	free(piles);
 }

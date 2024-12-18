@@ -1,47 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/16 15:32:10 by tmillot           #+#    #+#             */
-/*   Updated: 2024/12/18 11:47:34 by tmillot          ###   ########.fr       */
+/*   Created: 2024/12/05 16:28:55 by toto              #+#    #+#             */
+/*   Updated: 2024/12/18 14:07:32 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../Includes/push_swap.h"
 
-void	free_lst(t_lst *pile)
+t_stack	*ft_init(char **argv)
 {
-	t_lst	*temp;
+	t_stack	*piles;
 
-	while (pile)
+	piles = malloc(sizeof(t_stack));
+	if (piles == NULL)
+		return (NULL);
+	piles->p_a = NULL;
+	piles->p_b = NULL;
+	build_stack(&piles->p_a, argv);
+	if (piles->p_a == NULL)
 	{
-		temp = pile;
-		pile = pile->next;
-		free(temp);
+		free(piles);
+		return (NULL);
 	}
-}
-
-void	free_tab_char(char **tab)
-{
-	int	y;
-
-	y = 0;
-	if (tab == NULL)
-		return ;
-	while (tab[y] != NULL)
-	{
-		free(tab[y]);
-		y++;
-	}
-	free(tab);
-}
-
-void	free_t_stack(t_stack *piles)
-{
-	free_lst(piles->p_a);
-	free_lst(piles->p_b);
-	free(piles);
+	piles->size_a = ft_lst_lenght(piles->p_a);
+	piles->size_b = 0;
+	return (piles);
 }

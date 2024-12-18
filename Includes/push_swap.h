@@ -6,14 +6,14 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 13:03:13 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 14:22:48 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "../Sources/libft/libft.h"
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
@@ -63,6 +63,8 @@ int		find_max_index(t_lst *pile);
 int		find_min_index(t_lst *pile);
 int		find_closest_upper_index(t_lst *pile, int nb);
 int		find_closest_lower_index(t_lst *pile, int nb);
+void	put_min_a_on_top(t_stack *piles);
+void	put_max_b_on_top(t_stack *piles);
 
 /*rules*/
 void	swap_a(t_stack *pile);
