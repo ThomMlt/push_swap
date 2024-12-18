@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   algo_utils_upper_lower.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 13:35:06 by toto              #+#    #+#             */
-/*   Updated: 2024/12/16 12:20:49 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/18 13:02:59 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// ft_ next upper index 
-// ft_ next lower index
 
 int	find_closest_upper_index(t_lst *pile, int nb)
 {

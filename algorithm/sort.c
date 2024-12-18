@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:02:11 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/16 17:00:49 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:01:57 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,29 +47,6 @@ void	ft_sort_under_three_pa(t_stack *piles)
 			swap_a(piles);
 }
 
-void	put_max_b_on_top(t_stack *piles)
-{
-	int	max_index;
-
-	max_index = find_max_index(piles->p_b);
-	if (max_index * 2 < piles->size_b)
-	{
-		while (max_index > 0)
-		{
-			rotate_b(piles);
-			max_index--;
-		}
-	}
-	else
-	{
-		while (max_index < piles->size_b)
-		{
-			reverse_b(piles);
-			max_index++;
-		}
-	}
-}
-
 t_lst	*ft_lstlast_ps(t_lst *lst)
 {
 	if (lst == NULL)
@@ -79,29 +56,11 @@ t_lst	*ft_lstlast_ps(t_lst *lst)
 	return (lst);
 }
 
-void	put_min_a_on_top(t_stack *piles)
-{
-	int	index_min;
-
-	index_min = find_min_index(piles->p_a);
-	if (index_min * 2 < piles->size_a)
-		while (index_min-- > 0)
-			rotate_a(piles);
-	if (index_min * 2 >= piles->size_a)
-	{
-		while (index_min < piles->size_a)
-		{
-			reverse_a(piles);
-			index_min++;
-		}		
-	}
-}
-
 void	push_back_a(t_stack *piles)
 {
 	t_lst	*first_b;
 	int		next_upper;
-	
+
 	first_b = piles->p_b;
 	next_upper = find_closest_upper_index(piles->p_a, first_b->nb);
 	if (next_upper == -1)
@@ -117,13 +76,13 @@ void	push_back_a(t_stack *piles)
 
 void	ft_sort(t_stack *piles)
 {
-    if (check_piles_sort(piles) == FAILURE)
-    {
-	    if (piles->size_a > 3)
-		    push_b(piles);
-	    if (piles->size_a > 3)
-		    push_b(piles);
-        while (piles->size_a > 3)
+	if (check_piles_sort(piles) == FAILURE)
+	{
+		if (piles->size_a > 3)
+			push_b(piles);
+		if (piles->size_a > 3)
+			push_b(piles);
+		while (piles->size_a > 3)
 			find_cheapest_move(piles);
 		if (piles->size_a <= 3)
 		{
@@ -137,5 +96,5 @@ void	ft_sort(t_stack *piles)
 			}
 			free_lst(piles->p_b);
 		}
-    }
+	}
 }

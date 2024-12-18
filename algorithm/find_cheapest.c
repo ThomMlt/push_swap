@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_cheapest.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/06 09:55:57 by toto              #+#    #+#             */
-/*   Updated: 2024/12/16 12:53:53 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/18 13:05:42 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,15 @@ int	find_cost(t_stack *piles, int nb)
 	i_closest_b = find_closest_lower_index(piles->p_b, nb);
 	if (i_closest_b == -1)
 		i_closest_b = find_max_index(piles->p_b);
-	if (i_nb * 2 < piles->size_a && i_nb >= i_closest_b) 
+	if (i_nb * 2 < piles->size_a && i_nb >= i_closest_b)
 		cost = i_nb;
 	else if (i_closest_b * 2 < piles->size_b && i_closest_b >= i_nb)
 		cost = i_closest_b;
-	else if (i_nb * 2 >= piles->size_a && (piles->size_a - i_nb) >= (piles->size_b - i_closest_b))
+	else if (i_nb * 2 >= piles->size_a
+		&& (piles->size_a - i_nb) >= (piles->size_b - i_closest_b))
 		cost = piles->size_a - i_nb;
-	else if (i_closest_b * 2 >= piles->size_b && (piles->size_a - i_nb) <= (piles->size_b - i_closest_b))
+	else if (i_closest_b * 2 >= piles->size_b
+		&& (piles->size_a - i_nb) <= (piles->size_b - i_closest_b))
 		cost = piles->size_b - i_closest_b;
 	else if (i_nb * 2 < piles->size_a && i_closest_b * 2 >= piles->size_b)
 		cost = i_nb + (piles->size_b - i_closest_b);

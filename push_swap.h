@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 16:46:54 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 09:30:24 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:03:13 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		handling_error(char **argv);
 int		ft_is_duplicates(t_lst *pile);
 int		ft_parse_push_swap(t_stack *piles, char **argv);
 
-
 /*list fonction*/
 t_lst	*ft_newlst_int(int nb);
 void	ft_addlst_back(t_lst **lst, t_lst *nb);
@@ -56,7 +55,7 @@ void	free_tab_char(char **tab);
 void	free_t_stack(t_stack *piles);
 
 /*utils algo*/
-int	ft_index_to_value(t_lst *lst, int index);
+int		ft_index_to_value(t_lst *lst, int index);
 void	print_piles(t_stack *piles);
 int		find_max(t_lst *pile);
 int		find_min(t_lst *pile);

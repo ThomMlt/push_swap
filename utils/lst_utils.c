@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 12:21:32 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:02:48 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,3 @@ int	ft_lst_lenght(t_lst *pile)
 	}
 	return (i);
 }
-
-// int main(int argc, char **argv)
-// {
-// 	t_stack *pile_a;
-
-// 	pile_a = NULL;
-// 	build_stack(&pile_a, argv);
-// 	ft_is_duplicates(pile_a);
-// 	while (pile_a != NULL)
-// 	{
-// 		printf("%d\n", pile_a->nb);
-// 		pile_a = pile_a->next;
-// 	}
-// }

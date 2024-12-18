@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   instruction_algo.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:17:13 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/16 12:55:56 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/18 13:05:01 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,30 +54,30 @@ static void	move_2(t_stack *piles, int index, int closest_index)
 
 static void	move_3(t_stack *piles, int index, int closest_index)
 {
-    while (index > 0)
-    {
-        rotate_a(piles);
-        index--;
-    }
-    while (piles->size_b - closest_index > 0)
-    {
-        reverse_b(piles);
-        closest_index++;
-    }
+	while (index > 0)
+	{
+		rotate_a(piles);
+		index--;
+	}
+	while (piles->size_b - closest_index > 0)
+	{
+		reverse_b(piles);
+		closest_index++;
+	}
 }
 
 static void	move_4(t_stack *piles, int index, int closest_index)
 {
 	while (piles->size_a - index > 0)
-    {
-        reverse_a(piles);
-        index++;
-    }
-    while (closest_index > 0)
-    {
-        rotate_b(piles);
-        closest_index--;
-    }
+	{
+		reverse_a(piles);
+		index++;
+	}
+	while (closest_index > 0)
+	{
+		rotate_b(piles);
+		closest_index--;
+	}
 }
 
 void	do_move(t_stack *piles, int index, int nb)
@@ -95,7 +95,7 @@ void	do_move(t_stack *piles, int index, int nb)
 		&& (piles->size_a - index) >= (piles->size_b - i_closest_b))
 		move_2(piles, index, i_closest_b);
 	else if (i_closest_b * 2 >= piles->size_b
-		&& (piles->size_a - index) <= (piles->size_b - i_closest_b))	
+		&& (piles->size_a - index) <= (piles->size_b - i_closest_b))
 		move_2(piles, index, i_closest_b);
 	else if (index * 2 < piles->size_a && i_closest_b * 2 >= piles->size_b)
 		move_3(piles, index, i_closest_b);
