@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 09:24:04 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 12:55:39 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,18 +70,15 @@ int	handling_error(char **argv)
 		{
 			if (only_digit(str[j]) == FAILURE || ft_is_atoi(str[j]) == FAILURE)
 			{
-				while (j >= 0)
-				{
-					free(str[j]);
-					j--;
-				}
-				return (free(str), FAILURE);
+				free_tab_char(str);
+				return (FAILURE);
 			}
 			j++;
 		}
+		free_tab_char(str);
 		i++;
 	}
-	return (free_tab_char(str), SUCCESS);
+	return (SUCCESS);
 }
 
 int	ft_is_duplicates(t_lst *pile_a)
@@ -96,7 +93,7 @@ int	ft_is_duplicates(t_lst *pile_a)
 		while (run != NULL)
 		{
 			if (current->nb == run->nb)
-				return (free_lst(pile_a), FAILURE);
+				return (FAILURE);
 			run = run->next;
 		}
 		current = current->next;
@@ -111,8 +108,6 @@ int	ft_parse_push_swap(t_stack *piles, char **argv)
 		|| piles->p_a == NULL)
 	{
 		ft_putstr_fd("error\n", 2);
-		free_lst(piles->p_a);
-		free(piles);
 		return (FAILURE);
 	}
 	return (SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 09:21:52 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 12:21:32 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ void	build_stack(t_lst **stack, char **argv)
 			free_tab_char(str);
 			i++;
 		}
-		free_tab_char(str);
 	}
 	else
 		*stack = NULL;

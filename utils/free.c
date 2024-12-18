@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 15:32:10 by tmillot           #+#    #+#             */
-/*   Updated: 2024/12/18 09:04:51 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 11:47:34 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,34 @@
 
 void	free_lst(t_lst *pile)
 {
-	t_lst	*next;
+	t_lst	*temp;
 
-	while (pile != NULL)
+	while (pile)
 	{
-		next = pile->next;
-		free(pile);
-		pile = next;
+		temp = pile;
+		pile = pile->next;
+		free(temp);
 	}
-	pile = NULL;
 }
 
 void	free_tab_char(char **tab)
 {
 	int	y;
-	
+
 	y = 0;
 	if (tab == NULL)
-		return;
+		return ;
 	while (tab[y] != NULL)
 	{
 		free(tab[y]);
 		y++;
 	}
 	free(tab);
+}
+
+void	free_t_stack(t_stack *piles)
+{
+	free_lst(piles->p_a);
+	free_lst(piles->p_b);
+	free(piles);
 }
