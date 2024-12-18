@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 18:40:48 by toto              #+#    #+#             */
-/*   Updated: 2024/12/12 11:38:22 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/16 16:48:28 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap/push_swap.h"
+#include "../push_swap.h"
 
 void	push_a(t_stack *pile)
 {

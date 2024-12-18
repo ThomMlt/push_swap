@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 14:02:11 by thomas            #+#    #+#             */
-/*   Updated: 2024/12/16 12:51:20 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/16 17:00:49 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ void	ft_sort(t_stack *piles)
 					push_back_a(piles);
 				put_min_a_on_top(piles);
 			}
+			free_lst(piles->p_b);
 		}
     }
 }

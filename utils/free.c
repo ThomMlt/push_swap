@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 15:32:10 by tmillot           #+#    #+#             */
-/*   Updated: 2024/12/16 16:02:53 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 09:04:51 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,12 @@ void	free_tab_char(char **tab)
 	int	y;
 	
 	y = 0;
+	if (tab == NULL)
+		return;
 	while (tab[y] != NULL)
 	{
-		y++;
-	}
-	while (y >= 0)
-	{
 		free(tab[y]);
-		y--;
+		y++;
 	}
 	free(tab);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:25:53 by toto              #+#    #+#             */
-/*   Updated: 2024/12/12 14:25:26 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/16 16:49:02 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap/push_swap.h"
+#include "../push_swap.h"
 
 void	rotate_a(t_stack *pile)
 {

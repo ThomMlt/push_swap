@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toto <toto@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 12:40:22 by toto              #+#    #+#             */
-/*   Updated: 2024/12/05 16:16:17 by toto             ###   ########.fr       */
+/*   Updated: 2024/12/18 09:21:52 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap/push_swap.h"
+#include "../push_swap.h"
 
 t_lst	*ft_newlst_int(int nb)
 {
@@ -65,8 +65,10 @@ void	build_stack(t_lst **stack, char **argv)
 				ft_addlst_back(stack, ft_newlst_int(ft_atoi(str[j])));
 				j++;
 			}
+			free_tab_char(str);
 			i++;
 		}
+		free_tab_char(str);
 	}
 	else
 		*stack = NULL;

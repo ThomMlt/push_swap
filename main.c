@@ -14,7 +14,7 @@
 
 int main(int argc, char **argv)
 {
-	t_stack *piles;
+	t_stack	*piles;
 
 	if (argc <= 1)
 		return (ft_putstr_fd("error\n", 2), FAILURE);
@@ -24,6 +24,11 @@ int main(int argc, char **argv)
 	else
 	{
 		ft_sort(piles);
+		while (piles->p_a)
+		{
+			ft_printf("%d\n", piles->p_a->nb);
+			piles->p_a = piles->p_a->next;
+		}
 		free_lst(piles->p_a);
 		free(piles);
 	}

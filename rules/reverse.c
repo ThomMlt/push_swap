@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thomas <thomas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 10:33:15 by toto              #+#    #+#             */
-/*   Updated: 2024/12/12 14:25:43 by thomas           ###   ########.fr       */
+/*   Updated: 2024/12/16 16:48:49 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap/push_swap.h"
+#include "../push_swap.h"
 
 void	reverse_a(t_stack *pile)
 {

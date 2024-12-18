@@ -6,11 +6,11 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/12/16 16:27:16 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 09:24:04 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../push_swap/push_swap.h"
+#include "../push_swap.h"
 
 int	only_digit(char *str)
 {
@@ -96,7 +96,7 @@ int	ft_is_duplicates(t_lst *pile_a)
 		while (run != NULL)
 		{
 			if (current->nb == run->nb)
-				return (free_lst(pile_a) , FAILURE);
+				return (free_lst(pile_a), FAILURE);
 			run = run->next;
 		}
 		current = current->next;
@@ -111,6 +111,8 @@ int	ft_parse_push_swap(t_stack *piles, char **argv)
 		|| piles->p_a == NULL)
 	{
 		ft_putstr_fd("error\n", 2);
+		free_lst(piles->p_a);
+		free(piles);
 		return (FAILURE);
 	}
 	return (SUCCESS);
