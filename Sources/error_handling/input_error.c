@@ -6,7 +6,7 @@
 /*   By: tmillot <tmillot@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/24 11:21:43 by toto              #+#    #+#             */
-/*   Updated: 2024/12/18 17:00:04 by tmillot          ###   ########.fr       */
+/*   Updated: 2024/12/18 17:11:14 by tmillot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	handling_error(char **argv)
 			if (only_digit(str[j]) == FAILURE || ft_is_atoi(str[j]) == FAILURE)
 			{
 				free_tab_char(str);
-				ft_putstr_fd("error\n", 2);
+				ft_putstr_fd("Error\n", 2);
 				return (FAILURE);
 			}
 			j++;
@@ -108,7 +108,7 @@ int	ft_parse_push_swap(t_stack *piles, char **argv)
 		|| ft_is_duplicates(piles->p_a) == FAILURE
 		|| piles->p_a == NULL)
 	{
-		ft_putstr_fd("error\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		return (FAILURE);
 	}
 	return (SUCCESS);
